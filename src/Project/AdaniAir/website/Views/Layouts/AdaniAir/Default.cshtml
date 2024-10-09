@@ -1,0 +1,552 @@
+﻿@using Sitecore.Mvc.Analytics.Extensions
+@using Sitecore.Mvc
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Html.Sitecore().Field("title", new { DisableWebEdit = true })</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/style.min.css" />
+    <link rel="stylesheet" href="assets/css/home.min.css" />
+</head>
+<body>
+    <!-- Mobile Menu start -->
+    <div class="navMobile">
+        <ul>
+            <li>
+                <a href="#"><img src="assets/images/svg/map.svg" alt="" /> MAP</a>
+            </li>
+            <li>
+                <a href="#"><img src="assets/images/svg/flight.svg" alt="" /> FLIGHTS</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="mobileSearch">
+                    Search
+                </a>
+            </li>
+            <li>
+                <button class="navbar-toggler" type="button" data-toggle="collapse">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <!-- Mobile Menu end -->
+    <!--header start here-->
+    <header class="headerSection">
+        <div class="headerTopStrp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9 col-md-7 col-lg-6 leftStrp">
+                        <div class="importantNotice">
+                            <img src="assets/images/svg/comment-exclamation.svg" alt="" /> Important Notice : Mask is mandatory to travel
+                        </div>
+                    </div>
+                    <div class="col-3 col-md-5 col-lg-6 rightStrp">
+                        <div class="topStrRight">
+                            <div class="lostLinkBlock">
+                                <a href="#"><img src="assets/images/svg/lost-and-found-icon.svg" alt="" /> Lost And Found Query</a>
+                            </div>
+                            <div class="headerSocialIcon">
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/images/svg/facebook.svg" alt="facebook" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/images/svg/instagram.svg" alt="instagram" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/images/svg/linkedin.svg" alt="linkedin" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/images/svg/twitter.svg" alt="twitter" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">
+                                            <img src="assets/images/svg/youtube.svg" alt="youtube" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="weatherBlcok">
+                                <img src="assets/images/svg/weather-icon.svg" alt="Weather" /> 32°C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-expand-xl" id="top-menu">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/adani-white-logo.png" alt="Adani" class="whiteLogo" width="250" />
+                    <img src="assets/images/adani-color-logo.png" alt="Adani" class="blackLogo" width="250" />
+                </a>
+
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropMenuOpen">
+                            <a class="nav-link dropMenu practices" href="#"><span>Flights</span> </a>
+                            <!-- MegaMenu start -->
+                            <div class="megaMenu">
+                                <div class="container">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Arriving Flights</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Departing Flights</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Airline Information</a>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Track your Flight</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Add Flight</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- MegaMenu end -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span>Airport Guide</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span>Shop & Dine</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span>Booking</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span>Discover</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span>Maps</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span>News</span></a>
+                        </li>
+                    </ul>
+
+                    <ul class="rightNavMenu">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span>Business </span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Corporate</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown call">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><span>&nbsp;</span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    Helpline Number : <a href="tel:1800-572-111111">1800-572-111111</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown viewTheme">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+                                <span> </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><label><img src="assets/images/svg/font-size.svg" alt="" /></label> Font Size</a>
+                                </li>
+                                <li>
+                                    <a href="#"><label><img src="assets/images/svg/light-mode.svg" alt="" /></label> Light Mode</a>
+                                </li>
+                                <li>
+                                    <a href="#"><label><img src="assets/images/svg/dark-mode.svg" alt="" /></label> Dark Mode</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">
+                                <span>ENG</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" class="selected">ENG</a>
+                                </li>
+                                <li>
+                                    <a href="#">हिंदी</a>
+                                </li>
+                                <li>
+                                    <a href="#">मराठी</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropMenuOpen searchMenu">
+                            <a class="nav-link dropMenu practices" href="#"><span> </span></a>
+                            <!-- MegaMenu start -->
+                            <div class="megaMenu">
+                                <div class="container">
+                                    <div class="globalSearchSection">
+                                        <input type="text" value="" placeholder="Search" class="form-control" />
+                                        <button class="clearSearch">
+                                            <img src="assets/images/svg/search-close.svg" alt="" />
+                                        </button>
+                                        <button class="searchButton">
+                                            <img src="assets/images/svg/search-icon.svg" alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- MegaMenu end -->
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--header end here-->
+    <main>
+        @Html.Sitecore().Placeholder("main")
+    </main>
+
+    <!--footer start here-->
+    <footer>
+        <div class="footerSection">
+            <div class="container">
+                <div class="footerInner">
+                    <div class="footerLogoBlock">
+                        <img src="assets/images/adani-color-logo.png" alt="Adani" width="340" class="footerLogo" />
+                        <p>
+                            <span>Chhatrapati Shivaji Maharaj</span>
+                            International Airport Mumbai, Maharashtra 400099
+                        </p>
+                        <div class="footSocialIcon">
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="assets/images/svg/facebook.svg" alt="facebook" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="assets/images/svg/instagram.svg" alt="instagram" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="assets/images/svg/linkedin.svg" alt="linkedin" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="assets/images/svg/twitter.svg" alt="twitter" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="assets/images/svg/youtube.svg" alt="youtube" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footerMenuBlock">
+                        <h5>Travellers</h5>
+                        <ul>
+                            <li>
+                                <a href="#">Flights</a>
+                            </li>
+                            <li>
+                                <a href="#">Passenger Guide</a>
+                            </li>
+                            <li>
+                                <a href="#">At the Airport</a>
+                            </li>
+                            <li>
+                                <a href="#">To & From Airport</a>
+                            </li>
+                            <li>
+                                <a href="#">Shop & Dine</a>
+                            </li>
+                            <li>
+                                <a href="#">Booking</a>
+                            </li>
+                            <li>
+                                <a href="#">Discover</a>
+                            </li>
+                            <li>
+                                <a href="#">Maps</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footerMenuBlock">
+                        <h5>Business</h5>
+                        <ul>
+                            <li>
+                                <a href="#">Cargo</a>
+                            </li>
+                            <li>
+                                <a href="#">Airline Partnership</a>
+                            </li>
+                            <li>
+                                <a href="#">Commercial</a>
+                            </li>
+                            <li>
+                                <a href="#">General Aviation</a>
+                            </li>
+                            <li>
+                                <a href="#">Tenders</a>
+                            </li>
+                            <li>
+                                <a href="#">Reports</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footerMenuBlock">
+                        <h5>Our Airports</h5>
+                        <ul>
+                            <li>
+                                <a href="#">Ahmedabad</a>
+                            </li>
+                            <li>
+                                <a href="#">Lucknow</a>
+                            </li>
+                            <li>
+                                <a href="#">Mangaluru</a>
+                            </li>
+                            <li>
+                                <a href="#">Mumbai</a>
+                            </li>
+                            <li>
+                                <a href="#">Jaipur</a>
+                            </li>
+                            <li>
+                                <a href="#">Guwahati</a>
+                            </li>
+                            <li>
+                                <a href="#">Thiruvananthapuram</a>
+                            </li>
+                            <li>
+                                <a href="#">Navi Mumbai</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footerMenuBlock">
+                        <h5>Download Adani OneApp</h5>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="assets/images/svg/app-store.svg" alt="App Store" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="assets/images/svg/google-play.svg" alt="Google Pay" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bottomStrp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-5 colpyRight">
+                        2024 Adani Group
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-7 bottomLinks">
+                        <a href="#">Legal Disclaimer</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer end here-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // Experience at Airport
+        jQuery(document).ready(function ($) {
+            var quoteSwiper = new Swiper('.cross-section', {
+                speed: 800,
+                watchOverflow: true,
+                effect: 'slide',
+                navigation: {
+                    nextEl: ".swiper-button-next4",
+                    prevEl: ".swiper-button-prev4"
+                }
+            });
+
+            var imageSwiper = new Swiper('.swiper-container2', {
+                speed: 800,
+                loop: false,
+                watchOverflow: true,
+                effect: 'slide',
+                pagination: {
+                    el: ".swiper-pagination"
+                },
+                nextButton: '.swiper-button-next4',
+                prevButton: '.swiper-button-prev4',
+            });
+
+            if (imageSwiper.controller) {
+                imageSwiper.controller.control = quoteSwiper;
+            }
+
+            if (quoteSwiper.controller) {
+                quoteSwiper.controller.control = imageSwiper;
+            }
+
+            // Service Slider
+            var serviceSlide = new Swiper('.serviceSlider', {
+                speed: 1000,
+                direction: 'horizontal',
+                slidesPerView: 5,
+                spaceBetween: 20,
+                autoplay: false,
+                loop: false,
+                navigation: {
+                    nextEl: ".swiper-button-next3",
+                    prevEl: ".swiper-button-prev3"
+                },
+                breakpoints: {
+                    480: {
+                        slidesPerView: 2.8,
+                        resistanceRatio: 0.85,
+                        spaceBetween: 10,
+                    },
+                    767: {
+                        slidesPerView: 3.8,
+                        resistanceRatio: 0.85,
+                        spaceBetween: 10,
+                    },
+                    991: {
+                        slidesPerView: 5,
+                        resistanceRatio: 0.85
+                    }
+                },
+            });
+
+
+            // Information Slider
+            var informationSlide = new Swiper('.informationSlider', {
+                speed: 1000,
+                direction: 'horizontal',
+                slidesPerView: 5,
+                spaceBetween: 20,
+                autoplay: false,
+                loop: false,
+                navigation: {
+                    nextEl: ".swiper-button-next2",
+                    prevEl: ".swiper-button-prev2"
+                },
+                breakpoints: {
+                    480: {
+                        slidesPerView: 2.8,
+                        resistanceRatio: 0.85
+                    },
+                    767: {
+                        slidesPerView: 3.8,
+                        resistanceRatio: 0.85,
+                        spaceBetween: 10,
+                    },
+                    991: {
+                        slidesPerView: 5,
+                        resistanceRatio: 0.85
+                    }
+                },
+            });
+
+            // airportSlider Slider
+            var airportSlide = new Swiper('.airportSlider', {
+                speed: 1000,
+                direction: 'horizontal',
+                slidesPerView: 4,
+                spaceBetween: 20,
+                autoplay: false,
+                loop: false,
+                navigation: {
+                    nextEl: ".swiper-button-next1",
+                    prevEl: ".swiper-button-prev1"
+                },
+                breakpoints: {
+                    480: {
+                        slidesPerView: 1.8,
+                        resistanceRatio: 0.85
+                    },
+                    767: {
+                        slidesPerView: 1.8,
+                        resistanceRatio: 0.85
+                    },
+                    991: {
+                        slidesPerView: 2,
+                        resistanceRatio: 0.85
+                    },
+                    1199: {
+                        slidesPerView: 3,
+                        resistanceRatio: 0.85
+                    }
+                },
+            });
+        });
+
+        // Daetpicker script
+        jQuery(function () {
+            jQuery('.datepicker').datepicker({
+                language: "es",
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+        });
+
+        // Text toggle
+        jQuery("#toggleBtn").click(function () {
+            var moreText = jQuery("#moreText");
+            var toggleBtn = jQuery("#toggleBtn");
+
+            if (moreText.is(":hidden")) {
+                moreText.show();
+                toggleBtn.text("Read Less");
+            } else {
+                moreText.hide();
+                toggleBtn.text("Read More");
+            }
+        });
+    </script>
+</body>
+</html>

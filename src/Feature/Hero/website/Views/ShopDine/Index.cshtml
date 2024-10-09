@@ -1,0 +1,30 @@
+﻿@using AdaniAir.Feature.Hero.Models
+@model ShopSection
+
+<section class="shopDineSection">
+    <div class="container">
+        <div class="shopDineinnerSection">
+            <div class="contentLeftBlock">
+                <h3>@Model.TitleMain</h3>
+                <p>@Model.SubtitleMain</p>
+
+            </div>
+            <div class="contentRightBlock">
+                @foreach (var shopItem in Model.ShopList)
+                {
+                    <div class="block">
+                        <a href="#">
+                            <div class="imgBlock">
+                                <img src="@shopItem.ShopImageUrl" alt="@shopItem.ShopTitle" />
+                            </div>
+                            <div class="content">
+                                <h4>@Html.Raw(shopItem.ShopTitle)</h4>
+                                <p>@Html.Raw(shopItem.ShopSubtitle)</p>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

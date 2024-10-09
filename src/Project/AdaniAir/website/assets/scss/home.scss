@@ -1,0 +1,936 @@
+@import "_font.scss";
+@import "_variable.scss";
+@import "_mixin.scss";
+
+main{
+  padding-bottom: 35px;
+}
+// Banner Section css
+.bannerSection {
+  background: url(../images/banner.png) center 0 no-repeat;
+  background-size: 100% 100%;
+  height: 780px;
+  width: 100%;
+}
+
+
+// searchFlightSection css
+.searchFlightSection{
+  margin-bottom: 120px;
+  margin-top: -242px;
+  position: relative;
+  .searchFlightInner{
+    width: 820px;
+    margin: 0 auto;
+    .flightTabs{
+      padding-left: 30px;
+      padding-bottom: 20px;
+      label{
+        user-select: none;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      
+      input[type="radio"] + label {
+        z-index: 10;
+        @include font-style($fontSize18,$white,$fontFamilyReg);
+        line-height: 22px;
+        position: relative;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: all 200ms ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      input[type="radio"]:checked + label {
+        color: #fff;
+        opacity: 1;
+        font-family: $fontFamilyBold;
+        position: relative;
+        &::before{
+          position: absolute;
+          bottom: -26px;
+          left: 56%;
+          margin-left: -8px;
+          content: "";
+          display: block;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid #fff; 
+        }
+      }
+      
+      input[type="radio"] + label {
+        padding: 0;
+        border-radius: 0;
+        margin: 0;
+        margin-right: 20px;
+        min-width: 110px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+    .flightTabs input[type=radio]:checked+label:last-child:before{
+      left: 66%;
+    }
+    .searchFilterBlock{
+      background: #fff;
+      border-radius: 62px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      .datepicker{
+        width: 242px;
+        flex: none;
+        padding-right: 20px;
+        border-right: #E0E0E0 solid 1px;
+        input{
+          padding: 0 20px;
+          border: none;
+          color: #424242;
+          font-family: $fontFamilyReg;
+          &:focus{
+            box-shadow: none;
+          }
+        }
+      }
+      .inputFiled{
+        width: 50%;
+        input{
+          padding: 0 20px;
+          border: none;
+          color: #424242;
+          &:focus{
+            box-shadow: none;
+          }
+        }
+      }
+      .searchButton{
+        @include font-style($fontSize16,$white,$fontFamilySemiBd);
+        line-height: 19px;
+        background-color: #8E278F;
+        border-radius: 38px;
+        width: 135px;
+        height: 55px;
+        margin-left: auto;
+        border: none;
+      }
+    }
+  }
+}
+.datepicker table tr td, .datepicker table tr th{
+  font-size: $fontSize14;
+  line-height: 30px;
+}
+
+.serviceInformationSection{
+  padding: 0 0 35px 0;
+  margin-top: -40px;
+  position: relative;
+  .tab-content>.tab-pane{
+    display: block;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .tab-content>.active{
+    opacity: 1;
+    height: auto;
+    overflow: inherit;
+  }
+  .nav-tabs{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.06);
+    width: 496px;
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    .nav-item{
+      width: 50%;
+      &:first-child{
+        .nav-link{
+          &::before{
+            display: none;
+          }
+        }
+      }
+      .nav-link{
+        @include font-style($fontSize22,$primaryColor,$fontFamilySemiBd);
+        text-align: center;
+        margin: 0;
+        padding: 23px 20px;
+        border: 0;
+        line-height: 26px;
+        position: relative;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        &::before{
+          position: absolute;
+          left: 0;
+          top: 13px;
+          width: 1px;
+          height: 46px;
+          background: #E0E0E0;
+          content: "";
+        }
+        &.active{
+          color: $secondryColor;
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+          &::after{
+            position: absolute;
+            bottom: -14px;
+            left:50%;
+            margin-left: -15px;
+            content:"";
+            display:block;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid $white; 
+          }
+        }
+      }
+    }
+  }
+  .serviceSliderSection{
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.06);
+    width: 956px;
+    margin: 0 auto;
+    padding: 17px 55px;
+    .swiper-slide{
+      text-align: center;
+      line-height: 9px;
+      img{
+        width: 82px;
+        height: 82px;
+      }
+      span{
+        display: block;
+        margin-top: 20px;
+        @include font-style($fontSize18,$primaryColor,$fontFamilyMed);
+        line-height: 22px;
+      }
+    }
+    .swipperButton .swiper-button-prev3, .swipperButton .swiper-button-prev2 {
+      background: url(../images/svg/slider-arrow.svg) center center no-repeat;
+      background-color: #FFFFFF;
+      border-radius: 100%;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+      width: 36px;
+      height: 36px;
+      top: 50%;
+      margin-top: -18px;
+      transform: rotate(180deg);
+      position: absolute;
+      left: -18px;
+    }
+    
+    .swipperButton .swiper-button-next3, .swipperButton .swiper-button-next2 {
+      background: url(../images/svg/slider-arrow.svg) center center no-repeat;
+      background-color: #FFFFFF;
+      border-radius: 100%;
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+      width: 36px;
+      height: 36px;
+      top: 50%;
+      margin-top: -18px;
+      right: -18px;
+      position: absolute;
+    }
+    
+    .swipperButton .swiper-button-disabled {
+      opacity: 0;
+      cursor: default;
+    }
+  }
+  .informationSliderSection{
+    position: relative;
+  }
+}
+
+// airportDetailsSection css
+.airportDetailsSection{
+  padding: 35px 0;
+  .estimategateSection{
+    background-image: linear-gradient(270deg, rgb(0 127 160 / 14%) 0%, rgb(79 70 157 / 14%) 20.67%, rgb(150 43 129 / 14%) 68.18%, rgb(190 58 86 / 14%) 100%);
+    border-radius: 8px;
+    display: flex;
+    gap: 60px;
+    padding: 18px 20px;
+    align-items: center;
+    margin-bottom: 70px;
+    h4{
+      @include font-style($fontSize16,$primaryColor,$fontFamilySemiBd);
+      line-height: 26px;
+      margin-bottom: 0;
+      width: 122px;
+    }
+    .gateEntrySection{
+      display: flex;
+      gap: 20px;
+      .gateEntry{
+        @include font-style($fontSize18,$primaryColor,$fontFamilySemiBd);
+        line-height: 22px;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.06);
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+      .gateDes{
+        display: flex;
+      }
+      label{
+        @include font-style($fontSize14,$grey,$fontFamilyReg);
+        line-height: 22px;
+        padding-right: 20px;
+        span{
+          display: block;
+          @include font-style($fontSize14,$primaryColor,$fontFamilyMed);
+        }
+      }
+    }
+  }
+  .airportDes{
+    h4{
+      @include font-style($fontSize26,$primaryColor,$fontFamilySemiBd);
+      margin-bottom: 10px;
+      line-height: 30px;
+    }
+    p{
+      @include font-style($fontSize16,$grey,$fontFamilyReg);
+      margin-bottom: 0;
+      line-height: 26px;
+    }
+    a{
+      color: $secondryColor;
+      font-family: $fontFamilyMed;
+    }
+  }
+}
+
+// Artbeat of New India css
+
+.experienceAirportSection{
+  padding: 35px 0;
+  .slideBlock {
+    display: flex;
+    align-items: center;
+  }
+  .rightContentSection, .leftImgSection {
+    overflow: hidden;
+  }
+  .leftImgSection {
+    max-width: 920px;
+    line-height: 8px;
+    img{
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .rightContentSection{
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.06);
+    max-width: 441px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    padding: 40px 40px 30px;
+    margin-left: -100px;
+    overflow: inherit;
+    .swiper-slide {
+      background-color: #fff;
+      height: auto;
+    }
+    h4 {
+      @include font-style($fontSize24,$primaryColor,$fontFamilySemiBd);
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    label {
+      @include font-style($fontSize22,$primaryColor,$fontFamilyMed);
+      line-height: 32px;
+      margin-bottom: 22px;
+    }
+    p {
+      @include font-style($fontSize16,$grey,$fontFamilyMed);
+      line-height: 24px;
+      margin-bottom: 32px;
+    }
+    a {
+      @include font-style($fontSize16,$white,$fontFamilySemiBd);
+      background-color: $secondryColor;
+      border-radius: 24px;
+      min-width: 140px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 15px;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .numaricPagination {
+    position: relative;
+  }
+  .swiper-pagination {
+    bottom: 18px;
+    right: 15px;
+    width: 56px;
+    left: inherit;
+    span{
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+    .swiper-pagination-bullet{
+      background-color: #8E278F;
+      border-radius: 100%;
+      opacity: 0.3;
+      width: 6px;
+      height: 6px;
+      &.swiper-pagination-bullet-active{
+        opacity: 1;
+        width: 20px;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .swipperButton .swiper-button-prev4 {
+    background: url(../images/svg/slider-arrow.svg) center center no-repeat;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 42px;
+    height: 42px;
+    top: 50%;
+    margin-top: -21px;
+    transform: rotate(180deg);
+    position: absolute;
+    left: -20px;
+  }
+  
+  .swipperButton .swiper-button-next4 {
+    background: url(../images/svg/slider-arrow.svg) center center no-repeat;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 42px;
+    height: 42px;
+    top: 50%;
+    margin-top: -21px;
+    right: -20px;
+    position: absolute;
+  }
+  
+  .swipperButton .swiper-button-disabled {
+    opacity: 0;
+    cursor: default;
+  }
+}
+
+
+// airportSection css
+.airportSection{
+  padding: 35px 0;
+  .airportinnerSection{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    .contentLeftBlock{
+      width: 260px;
+      flex: none;
+      h3{
+        @include font-style($fontSize30,$primaryColor,$fontFamilySemiBd);
+        line-height: 36px;
+        margin-bottom: 16px;
+      }
+      p{
+        @include font-style($fontSize16,$grey,$fontFamilyReg);
+        line-height: 26px;
+        margin-bottom: 20px;
+      }
+      a {
+        @include font-style($fontSize16,$white,$fontFamilySemiBd);
+        background-color: $secondryColor;
+        border-radius: 24px;
+        min-width: 170px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 15px;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+    .contentRightBlock{
+      width: calc(100% - 260px);
+    }
+    .airportSliderSection{
+      position: relative;
+      .airportSlider{
+        .swiper-slide{
+          height:auto;
+          .imageBlock{
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            border-radius: 8px;
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .content{
+            border: 1px solid #E0E0E0;
+            border-radius: 0 0px 6px 6px;
+            border-top: none;
+            padding: 35px 20px 20px;
+            margin-top: -15px;
+            height: calc(100% - 218px);
+            h4{
+              @include font-style($fontSize18,$primaryColor,$fontFamilySemiBd);
+              line-height: 22px;
+              margin-bottom: 6px;
+            }
+            p{
+              @include font-style($fontSize15,$grey,$fontFamilyReg);
+              line-height: 24px;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      .swipperButton .swiper-button-prev1 {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(-90deg, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 80%) 100%);
+        height: 100%;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+        box-shadow: none;
+        width: 150px;
+        position: absolute;
+        &::after{
+          background: url(../images/svg/slider-arrow.svg) center center no-repeat;
+          background-color: #FFFFFF;
+          border-radius: 100%;
+          box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+          width: 42px;
+          height: 42px;
+          top: 37%;
+          margin-top: -21px;
+          transform: rotate(180deg);
+          position: absolute;
+          left: 24px;
+          content: "";
+        }
+      }
+      
+      .swipperButton .swiper-button-next1 {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255 255 255 / 80%) 100%);
+        height: 100%;
+        border-radius: 0;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+        box-shadow: none;
+        width: 150px;
+        position: absolute;
+        &::after{
+          background: url(../images/svg/slider-arrow.svg) center center no-repeat;
+          background-color: #FFFFFF;
+          border-radius: 100%;
+          box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
+          width: 42px;
+          height: 42px;
+          top: 37%;
+          margin-top: -21px;
+          right: 24px;
+          position: absolute;
+          content: "";
+        }
+      }
+      
+      .swipperButton .swiper-button-disabled {
+        opacity: 0;
+        cursor: default;
+      }
+    }
+  }
+}
+
+// shopDineSection css
+.shopDineSection{
+  padding: 35px 0;
+}
+.shopDineinnerSection{
+  background-image: linear-gradient(270deg, #007FA0 0%, #4F469D 20.67%, #962B81 68.18%, #BE3A56 100%);
+  border-radius: 16px;
+  padding: 50px 32px;
+  display: flex;
+  gap: 65px;
+  align-items: center;
+  .contentLeftBlock{
+    width: 260px;
+    flex: none;
+    h3{
+      @include font-style($fontSize30,$white,$fontFamilySemiBd);
+      line-height: 36px;
+      margin-bottom: 10px;
+    }
+    p{
+      @include font-style($fontSize16, rgba($white, $opacity8), $fontFamilyReg);
+      line-height: 26px;
+      margin-bottom: 0;
+    }
+  }
+  .contentRightBlock{
+    display: flex;
+    gap: 30px;
+    .block{
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+      width: 50%;
+      a{
+        padding: 14px 15px;
+        display: flex;
+        align-items: center;
+        .imgBlock{
+          background-color: #ccc;
+          border-radius: 10px;
+          width: 127px;
+          height: 122px;
+          overflow: hidden;
+          flex: none;
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .content{
+          padding-left: 20px;
+          flex: 1;
+          h4{
+            @include font-style($fontSize18,$primaryColor,$fontFamilySemiBd);
+            line-height: 30px;
+            margin-bottom: 6px;
+            background: url(../images/svg/right-arrow.svg) right center no-repeat;
+            padding-right: 24px;
+          }
+          p{
+            @include font-style($fontSize14,$grey,$fontFamilyReg);
+            line-height: 24px;
+            margin-bottom: 0;
+          }
+        }
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// Responsive css
+@media only screen and (max-width: 1199px) {
+  .shopDineinnerSection{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 30px;
+  }
+  .airportDetailsSection{
+    .estimategateSection{
+      h4{
+        flex: none;
+      }
+      .gateEntrySection{
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .searchFlightSection{
+    .searchFlightInner{
+      width: 100%;
+    }
+  }
+
+  .shopDineinnerSection{
+    flex-direction: column;
+    align-items: flex-start;
+    .contentRightBlock{
+      flex-direction: column;
+      width: 100%;
+      .block{
+        width: 100%;
+      }
+    }
+  }
+
+  .serviceInformationSection{
+    .serviceSliderSection{
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .airportDetailsSection{
+    .estimategateSection{
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      h4{
+        width: 100%;
+        font-size: 18px;
+      }
+      .gateEntrySection{
+        width: 100%;
+        label{
+          flex: 0 0 33%;
+          &:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .bannerSection{
+    height: 470px;
+    background: url(../images/mobile-banner.png) 0 0 no-repeat;
+    background-size: 125%;
+  }
+  .serviceInformationSection .serviceSliderSection .swiper-slide span{
+    font-size: 15px;
+  }
+  .serviceInformationSection .nav-tabs .nav-item .nav-link::before{
+    height: 30px;
+    top: 50%;
+    margin-top: -15px;
+  }
+  .serviceInformationSection{
+    padding-bottom: 20px;
+    .nav-tabs{
+      width: 100%;
+      .nav-item{
+        .nav-link{
+          font-size: 16px;
+          padding:18px 20px;
+          &::before{
+            left: -5px;
+          }
+        }
+      }
+    }
+    .swiper-button-next3, .swiper-button-next2, .swiper-button-prev3, .swiper-button-prev2{
+      display: none;
+    }
+  }
+  .airportDetailsSection .estimategateSection{
+    margin-bottom: 40px;
+  }
+  .airportSection{
+    padding: 20px 0;
+    .airportinnerSection{
+      flex-direction: column;
+      .contentLeftBlock{
+        width: 100%;
+        h3{
+          font-size: 18px;
+          line-height: 26px;
+          margin-bottom: 8px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+      .contentRightBlock{
+        width: 100%;
+        .airportSliderSection{
+          margin-right: -15px;
+          margin-left: -15px;
+          padding-left: 20px;
+          .airportSlider{
+            .swiper-slide{
+              .imageBlock{
+                height: 160px;
+              }
+              .content{
+                padding: 35px 16px 16px;
+              }
+            }
+          }
+        }
+        .swiper-button-next1, .swiper-button-prev1{
+          display: none;
+        }
+      }
+    }
+  }
+  .airportDetailsSection{
+    padding: 20px 0;
+    .airportDes h4{
+      font-size: 18px;
+      line-height: 28px;
+    }
+    .airportDes p{
+      font-size: 14px;
+    }
+  }
+  .experienceAirportSection{
+    padding: 20px 0;
+    .slideBlock{
+      flex-direction: column;
+      .leftImgSection{
+        max-width: 100%;
+      }
+      .rightContentSection{
+        max-width: 95%;
+        margin: 0;
+        padding: 20px 15px;
+        margin-top: -32%;
+        h4{
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        label{
+          font-size: 18px;
+          line-height: 28px;
+          margin-bottom: 10px;
+        }
+        p{
+          font-size: 14px;
+          line-height: 22px;
+          margin-bottom: 18px;
+        }
+        a{
+          font-size: 14px;
+        }
+      }
+      .swiper-button-next4, .swiper-button-prev4{
+        display: none;
+      }
+    }
+  }
+  .shopDineSection{
+    padding: 20px 0;
+  }
+  .shopDineinnerSection{
+    padding:20px 16px;
+    gap: 16px;
+    .contentLeftBlock{
+      width: 100%;
+      h3{
+        font-size: 26px;
+        line-height: 26px;
+        margin-bottom: 4px;
+      }
+      p{
+        font-size: 14px;
+      }
+    }
+    .contentRightBlock{
+      .block{
+        a{
+          padding: 10px;
+          .imgBlock{
+            width: 80px;
+            height: 80px;
+          }
+          .content{
+            padding-left: 14px;
+            h4{
+              font-size: 15px;
+              line-height: 18px;
+            }
+            p{
+              font-size: 13px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .searchFlightSection .searchFlightInner .searchFilterBlock .datepicker{
+    width: 100px;
+    padding-right: 15px;
+    .input-group-append{
+      display: none;
+    }
+  }
+  .searchFlightSection .searchFlightInner .searchFilterBlock .datepicker input{
+    padding-left: 10px;
+    padding-right: 0;
+    font-size: 13px;
+  }
+  .searchFlightSection .searchFlightInner .searchFilterBlock .searchButton{
+    background: url(../images/svg/search-icon-banner.svg) center center no-repeat;
+    width: 24px;
+    height: 24px;
+    text-indent: -99999px;
+    margin-left: 0;
+  }
+  .searchFlightSection .searchFlightInner .searchFilterBlock .inputFiled{
+    width: 74%;
+  }
+  .searchFlightSection .searchFlightInner .searchFilterBlock .inputFiled input{
+    font-size: 13px;
+  }
+  .searchFlightSection .searchFlightInner .searchFilterBlock{
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .searchFlightSection{
+    margin-bottom: 76px;
+    margin-top: -180px;
+  }
+  .serviceInformationSection .serviceSliderSection .swiper-slide img{
+    width: 60px;
+    height: 60px;
+  }
+  .airportSection .airportinnerSection .airportSliderSection .airportSlider .swiper-slide .content{
+    height: calc(100% - 160px);
+  }
+}
+
+
+@media only screen and (max-width: 575px) {
+  .airportSection .airportinnerSection .contentLeftBlock a{
+    width: 100%;
+    height: 42px;
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Homepage-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_Search_Close" transform="translate(-980, -157)" fill="#424242" fill-rule="nonzero">
+            <path d="M990,157 C995.53,157 1000,161.47 1000,167 C1000,172.53 995.53,177 990,177 C984.47,177 980,172.53 980,167 C980,161.47 984.47,157 990,157 M993.59,162 L990,165.59 L986.41,162 L985,163.41 L988.59,167 L985,170.59 L986.41,172 L990,168.41 L993.59,172 L995,170.59 L991.41,167 L995,163.41 L993.59,162 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

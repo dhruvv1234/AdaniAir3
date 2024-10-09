@@ -1,0 +1,27 @@
+@media (max-width: 1199.98px) { 
+    :root {
+        --fontSize72: 32px; /*42*/
+        --fontSize60: 42px; /*42*/
+        --fontSize42: 32px; /*32*/
+        --fontSize36: 24px; /*24*/
+        --fontSize24: 20px; /*20*/
+        --fontSize20: 18px; /*18*/
+    }
+}
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 767px) { 
+    
+}
+@media (max-width: 575px) { 
+  
+}
+
+
+
+
+
+
+

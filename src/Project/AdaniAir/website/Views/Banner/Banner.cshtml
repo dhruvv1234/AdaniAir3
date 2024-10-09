@@ -1,0 +1,76 @@
+﻿@using Sitecore.Data.Fields
+@using Sitecore.Mvc.Presentation
+@{
+    var dataSourceId = RenderingContext.Current.Rendering.DataSource;
+    var dataSourceItem = Sitecore.Context.Database.GetItem(dataSourceId);
+
+    string title = string.Empty;
+    string subtitle = string.Empty;
+    string imageUrl = string.Empty;
+    string imageAltText = string.Empty;
+
+    if (dataSourceItem != null)
+    {
+        title = dataSourceItem["Text1"];
+
+        Field field = dataSourceItem.Fields["Image"];
+        if (field != null && field.TypeKey == "image")
+        {
+            ImageField imageField = new ImageField(field);
+            if (imageField.MediaItem != null)
+            {
+                imageUrl = Sitecore.Resources.Media.MediaManager.GetMediaUrl(imageField.MediaItem);
+                imageAltText = imageField.Alt;
+            }
+        }
+    }
+}
+
+
+
+
+
+<!-- Chatbot -->
+<div class="chatBot">
+    <img src="assets/images/chatbot.png" alt="" width="54" />
+</div>
+<!-- banner Section start -->
+<section class="bannerSection">
+    <div class="feedbacStickykButton">
+        <a href="javascript:void();">
+            <img src="assets/images/svg/feedback-icon.svg" alt="" /> Feedback
+        </a>
+    </div>
+    <div class="feedbacStickykButton lostStickykButton">
+        <a href="javascript:void();">
+            <img src="assets/images/svg/lost-and-found-icon.svg" alt="" /> Lost & Found
+        </a>
+    </div>
+</section>
+<!-- banner Section end -->
+<!-- Flight search section start -->
+<section class="searchFlightSection">
+    <div class="container">
+        <div class="searchFlightInner">
+            <div class="flightTabs">
+                <input type='radio' id='arrival' checked='checked' name='radio'>
+                <label for='arrival'><img src="assets/images/svg/arrival.svg" alt="arrival" /> @title</label>
+                <input type='radio' id='departure' name='radio'>
+                <label for='departure'><img src="assets/images/svg/departure.svg" alt="departure" />Departure</label>
+            </div>
+            <div class="searchFilterBlock">
+                <div class="datepicker date input-group">
+                    <input type="text" placeholder="Select Date" class="form-control" id="fecha1">
+                    <div class="input-group-append">
+                        <img src="assets/images/svg/calender.svg" alt="calender" width="18" />
+                    </div>
+                </div>
+                <div class="inputFiled">
+                    <input type="text" value="" placeholder="Flight number, Destination, Airline" class="form-control" />
+                </div>
+                <button class="searchButton" type="submit">Search</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Flight search section end -->

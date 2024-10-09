@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01_Homepage-Version-3" transform="translate(-513, -617)" fill="#9E9E9E" fill-rule="nonzero">
+            <g id="Group-16" transform="translate(310, 549)">
+                <g id="Group-28" transform="translate(0, 33)">
+                    <path d="M207,44 L207,46 L209,46 L209,44 L207,44 Z M211,44 L211,46 L213,46 L213,44 L211,44 Z M215,44 L215,46 L217,46 L217,44 L215,44 Z M218,37 L218,35 L216,35 L216,37 L208,37 L208,35 L206,35 L206,37 L205,37 C203.89,37 203,37.9 203,39 L203,53 C203,54.1045695 203.895431,55 205,55 L219,55 C220.104569,55 221,54.1045695 221,53 L221,39 C221,37.8954305 220.104569,37 219,37 L218,37 Z M219,53 L205,53 L205,42 L219,42 L219,53 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

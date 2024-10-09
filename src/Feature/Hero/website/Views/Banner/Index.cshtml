@@ -1,0 +1,47 @@
+﻿@using AdaniAir.Feature.Hero.Models
+@model Banner
+
+<!-- Chatbot -->
+<div class="chatBot">
+    <img src="@Model.ImageBot" alt="" width="54" />
+</div>
+<!-- banner Section start -->
+<section class="bannerSection">
+    <div class="feedbacStickykButton">
+        <a href="javascript:void();">
+            <img src="@Model.StickyImg1" alt="" /> @Model.Stickytext1
+        </a>
+    </div>
+    <div class="feedbacStickykButton lostStickykButton">
+        <a href="javascript:void();">
+            <img src="@Model.StickyImg2" alt="" /> @Model.Stickytext2
+        </a>
+    </div>
+</section>
+<!-- banner Section end -->
+<!-- Flight search section start -->
+<section class="searchFlightSection">
+    <div class="container">
+        <div class="searchFlightInner">
+            <div class="flightTabs">
+                <input type='radio' id='arrival' checked='checked' name='radio'>
+                <label for='arrival'><img src="@Model.ImageUrl1" alt="@Model.ImageAltText1" /> @Model.Text1</label>
+                <input type='radio' id='departure' name='radio'>
+                <label for='departure'><img src="@Model.ImageUrl2" alt="@Model.ImageAltText2" />@Model.Text2</label>
+            </div>
+            <div class="searchFilterBlock">
+                <div class="datepicker date input-group">
+                    <input type="text" placeholder="@Model.DateText1" class="form-control" id="fecha1">
+                    <div class="input-group-append">
+                        <img src="@Model.CalendarImageUrl" alt="calender" width="18" />
+                    </div>
+                </div>
+                <div class="inputFiled">
+                    <input type="text" value="" placeholder="@Model.DateText2" class="form-control" />
+                </div>
+                <button class="searchButton" type="submit">@Model.SearchButtonText</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Flight search section end -->
